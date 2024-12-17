@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rata-rata Tinggi Badan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .header {
+            background-color: #ffd54f;
+            padding: 10px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 5px 5px 0 0;
+        }
+        .footer {
+            background-color: #ffd54f;
+            padding: 10px;
+            margin: 20px -20px -20px -20px;
+            border-radius: 0 0 5px 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: inline-block;
+            width: 100px;
+        }
+        input[type="number"] {
+            padding: 5px;
+            width: 150px;
+        }
+        button {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        button:hover {
+            background-color: #1976D2;
+        }
+        .dots {
+            display: flex;
+            gap: 5px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #666;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 style="margin: 0;">Soal No. 2</h2>
+        </div>
+
+        <h3 style="text-align: center;">Rata-rata Tinggi Badan</h3>
+
+        <div class="form-group">
+            <label>Siswa 1:</label>
+            <input type="number" id="siswa1" step="0.1">
+        </div>
+        <div class="form-group">
+            <label>Siswa 2:</label>
+            <input type="number" id="siswa2" step="0.1">
+        </div>
+        <div class="form-group">
+            <label>Siswa 3:</label>
+            <input type="number" id="siswa3" step="0.1">
+        </div>
+        <div class="form-group">
+            <label>Siswa 4:</label>
+            <input type="number" id="siswa4" step="0.1">
+        </div>
+        <div class="form-group">
+            <label>Siswa 5:</label>
+            <input type="number" id="siswa5" step="0.1">
+        </div>
+
+        <div style="text-align: center; margin: 15px 0;">
+            <button onclick="hitungRata()">Hitung</button>
+        </div>
+
+        <div class="form-group">
+            <label>Hasil:</label>
+            <input type="number" id="hasil" readonly>
+        </div>
+
+        <div class="footer">
+            <div>Copyright 2024</div>
+            <div class="dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function hitungRata() {
+            // Mengambil nilai dari setiap input
+            const siswa1 = parseFloat(document.getElementById('siswa1').value) || 0;
+            const siswa2 = parseFloat(document.getElementById('siswa2').value) || 0;
+            const siswa3 = parseFloat(document.getElementById('siswa3').value) || 0;
+            const siswa4 = parseFloat(document.getElementById('siswa4').value) || 0;
+            const siswa5 = parseFloat(document.getElementById('siswa5').value) || 0;
+
+            // Menghitung rata-rata
+            const hasil = (siswa1 + siswa2 + siswa3 + siswa4 + siswa5) / 5;
+
+            // Menampilkan hasil dengan 2 angka desimal
+            document.getElementById('hasil').value = hasil.toFixed(2);
+        }
+    </script>
+</body>
+</html>
